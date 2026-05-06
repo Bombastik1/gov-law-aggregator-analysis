@@ -16,12 +16,23 @@
             </nav>
         </aside>
         <main class="content">
-            <header>
+            <header class="top-bar">
                 <h1>Система моніторингу законодавства</h1>
+                <div class="stats-badge">Активних актів: <span id="law-count">0</span></div>
             </header>
+        
+            <div class="toolbar">
+                <input type="text" id="search-input" placeholder="Пошук за назвою..." onkeyup="filterLaws()">
+                <select id="category-filter" onchange="filterLaws()">
+                    <option value="all">Всі категорії</option>
+                    <option value="Закон">Закони</option>
+                    <option value="Постанова">Постанови</option>
+                    <option value="Кодекс">Кодекси</option>
+                </select>
+            </div>
+        
             <div id="laws-list" class="grid">
-                <!-- Сюди JS підставить дані -->
-                <p>Завантаження даних з API...</p>
+                <!-- Картки з'являться тут -->
             </div>
         </main>
     </div>
